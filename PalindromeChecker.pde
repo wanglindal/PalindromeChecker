@@ -16,7 +16,28 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  return false;
-}
+   word = removeNonLetters(word);
+  for(int i=0; i<word.length() ; i++)
+  {
+   if(word.charAt(i) != word.charAt(word.length()-(i+1)))
+    {
 
+    return false;
+    }
+  }//your code here
+  return true;
+}
+public String removeNonLetters(String word)
+{
+  word = word.toLowerCase();
+  String none = new String();
+  for ( int x=0; x< word.length (); x++)
+  {
+    if(Character.isLetter(word.charAt(x))== true)
+    {
+      none = none + word.charAt(x);
+    }
+  }
+
+  return none;
+}
